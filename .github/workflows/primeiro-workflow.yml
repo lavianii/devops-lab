@@ -9,13 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
       - name: Instalar SDK .NET
         uses: actions/setup-dotnet@v3
         with: 
           dotnet-version: '9.0.x'
       
       - name: Build do projeto
-        run: dotnet build .\workflows\workflows.csproj --verbosity detailed
+        run: dotnet build ./workflows/workflows.csproj --verbosity detailed
       
       - name: Run do projeto
-        run: dotnet run --project .\workflows\workflows.csproj --verbose
+        run: dotnet run --project ./workflows/workflows.csproj --verbose
