@@ -18,7 +18,7 @@ jobs:
           dotnet-version: '9.0.x'
       
       - name: Build do projeto
-        run: dotnet build ./workflows/workflows.csproj --verbosity detailed
+        run: dotnet build ./primeiro-workflows/workflows/workflows.csproj --verbosity detailed
       
       - name: Run do projeto
-        run: dotnet run --project ./workflows/workflows.csproj --verbose
+        run: dotnet run --project ./primeiro-workflows/workflows/workflows.csproj --verbose
