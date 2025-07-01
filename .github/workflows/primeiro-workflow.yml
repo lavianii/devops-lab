@@ -1,0 +1,21 @@
+name: Primeiro CI
+
+on:
+  push: 
+    branches: [ primeiro-workflow ]
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Instalar SDK .NET
+        uses: actions/setup-dotnet@v3
+        with: 
+          dotnet-version: '9.0.x'
+      
+      - name: Build do projeto
+        run: dotnet build
+      
+      - name: Run do projeto
+        run: dotnet run --project  .\workflows\workflows.csproj --verbose
