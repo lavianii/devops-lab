@@ -24,8 +24,8 @@ jobs:
           file: ./src/Dockerfile
           push: true
           tags: |
-            first-project/pdi:${{github.run_number}}
-            first-project/pdi:latest
+            jonaslavi/pdi:${{github.run_number}}
+            jonaslavi/pdi:latest
   CD:
     runs-on: ubuntu-latest
     needs: [CI]
