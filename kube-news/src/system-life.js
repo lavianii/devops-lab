@@ -1,6 +1,6 @@
-var express = require('express');
-var router = express.Router();
-const os = require('os')
+const express = require('express');
+const router = express.Router();
+const os = require('os');
 
 let isHealth = true;
 let readTime = new Date(Date.now());
@@ -40,7 +40,7 @@ router.put('/unreadyfor/:seconds', (req, res) => {
     res.send("OK");
 });
 
-var healthMid = function (req, res, next) {
+const healthMid = function (req, res, next) {
     
     if (isHealth) {
         next();
